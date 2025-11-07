@@ -1,0 +1,209 @@
+:root {
+    --white: #ffffff;
+    --primary: #4fc3f7;
+    --secondary: #232526;
+    --gSecondary: linear-gradient(90deg, #232526 0%, #2f3132 100%);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #888;
+}
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navSection {
+    background: linear-gradient(90deg, #232526 0%, #2f3132 100%);
+}
+
+.navSection .nav-link {
+    color: white;
+}
+
+.navSection #navbarNav {
+    margin-right: 100px;
+}
+
+.navSection .nav-link {
+  position: relative;
+  display: inline-block;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navSection .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor; /* matches text color */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navSection .nav-link:hover::after {
+  width: 100%;
+}
+
+.navSection .nav-link.active::after {
+  width: 100%;
+}
+
+
+.navSection .dropdown-menu {
+  background: var(--secondary);
+  border: none;
+  padding: 0;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.navSection .dropdown-item {
+  color: white;
+  background-color: var(--secondary);
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+/* Hover color change */
+.navSection .dropdown-item:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+/* 🔹 Submenu container */
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -5px;
+  margin-left: 1px;
+  display: none;
+  background: var(--secondary);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+/* 🔹 Submenu and sub-submenu items */
+.dropdown-submenu .dropdown-item {
+  color: white;
+  background-color: var(--secondary);
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 0;
+}
+
+/* Hover effect: simple background color change */
+.dropdown-submenu .dropdown-item:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+/* Remove underline completely */
+.dropdown-submenu .dropdown-item::after {
+  display: none;
+}
+
+
+
+.footer {
+  background: linear-gradient(180deg, #2b2b2b 0%, #1e1e1e 100%);
+  color: #ddd;
+  border-top: 2px solid #00b4d8;
+}
+
+.footer-link {
+  color: #00b4d8;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #0096c7;
+  text-decoration: underline;
+}
+
+/* Social icons */
+.social-icon {
+  color: #00b4d8;
+  border: 2px solid #00b4d8;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #00b4d8;
+  color: #1e1e1e;
+  box-shadow: 0 0 20px 6px rgba(79, 195, 247, 0.8);
+  transform: translateY(-1px);
+}
+
+.footer h5 {
+  letter-spacing: 1px;
+}
+
+
+
+.carousel {
+  background-color: #0f0f0f;
+  color: white;
+  padding: 100px 0;
+}
+
+.carousel-content {
+  min-height: 70vh;
+}
+
+.carousel-text {
+  max-width: 600px;
+}
+
+.carousel-text ul {
+  color: white;
+  padding-left: 20px;
+}
+
+.carousel-text .btn {
+  border-color: #4fc3f7;
+  color: #4fc3f7;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.carousel-text .btn:hover {
+  background-color: #4fc3f7;
+  color: #1e1e1e;
+  box-shadow: 0 0 20px rgba(79, 195, 247, 0.7);
+  transform: translateY(-2px);
+}
+
+.carousel-img img {
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(79, 195, 247, 0.2);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
