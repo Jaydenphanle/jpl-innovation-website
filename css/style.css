@@ -26,6 +26,10 @@ body {
     margin-right: 100px;
 }
 
+.navSection .navbar-brand {
+    margin-left: 50px;
+}
+
 .navSection .nav-link {
   position: relative;
   display: inline-block;
@@ -164,7 +168,7 @@ body {
 
 
 .carousel {
-  background-color: #0f0f0f;
+  background-color: #202020;
   color: white;
   padding: 100px 0;
 }
