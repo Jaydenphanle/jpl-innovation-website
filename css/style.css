@@ -216,3 +216,13 @@ body {
 .carousel-control-next-icon {
   filter: invert(1);
 }
+
+/* Vision page card hover effects */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(4, 171, 248, 0.795) !important;
+}
