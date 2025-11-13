@@ -1,14 +1,18 @@
 :root {
     --white: #ffffff;
     --primary: #4fc3f7;
-    --secondary: #232526;
-    --gSecondary: linear-gradient(90deg, #232526 0%, #2f3132 100%);
+    --secondary: #1a1d23;
+    --gSecondary: linear-gradient(90deg, #1a1d23 0%, #24272e 100%);
+    --dark-bg: #0f1115;
+    --card-bg: #1a1d23;
+    --border-color: rgba(79, 195, 247, 0.15);
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #888;
+    background: #0f1115;
+    color: #e4e6eb;
 }
 .navbar {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -124,26 +128,26 @@ body {
 
 
 .footer {
-  background: linear-gradient(180deg, #2b2b2b 0%, #1e1e1e 100%);
-  color: #ddd;
-  border-top: 2px solid #00b4d8;
+  background: linear-gradient(180deg, #1a1d23 0%, #0f1115 100%);
+  color: #b8bcc8;
+  border-top: 1px solid rgba(79, 195, 247, 0.2);
 }
 
 .footer-link {
-  color: #00b4d8;
+  color: #4fc3f7;
   text-decoration: none;
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #0096c7;
+  color: #7dd9ff;
   text-decoration: underline;
 }
 
 /* Social icons */
 .social-icon {
-  color: #00b4d8;
-  border: 2px solid #00b4d8;
+  color: #4fc3f7;
+  border: 2px solid #4fc3f7;
   border-radius: 50%;
   width: 38px;
   height: 38px;
@@ -155,10 +159,10 @@ body {
 }
 
 .social-icon:hover {
-  background-color: #00b4d8;
-  color: #1e1e1e;
-  box-shadow: 0 0 20px 6px rgba(79, 195, 247, 0.8);
-  transform: translateY(-1px);
+  background-color: #4fc3f7;
+  color: #0f1115;
+  box-shadow: 0 0 20px 6px rgba(79, 195, 247, 0.6);
+  transform: translateY(-2px);
 }
 
 .footer h5 {
@@ -168,7 +172,7 @@ body {
 
 
 .carousel {
-  background-color: #202020;
+  background: linear-gradient(180deg, #0f1115 0%, #1a1d23 100%);
   color: white;
   padding: 100px 0;
 }
@@ -182,7 +186,7 @@ body {
 }
 
 .carousel-text ul {
-  color: white;
+  color: #e4e6eb;
   padding-left: 20px;
 }
 
@@ -192,12 +196,13 @@ body {
   font-weight: bold;
   letter-spacing: 2px;
   transition: all 0.3s ease;
+  background: rgba(79, 195, 247, 0.05);
 }
 
 .carousel-text .btn:hover {
   background-color: #4fc3f7;
-  color: #1e1e1e;
-  box-shadow: 0 0 20px rgba(79, 195, 247, 0.7);
+  color: #0f1115;
+  box-shadow: 0 0 25px rgba(79, 195, 247, 0.5);
   transform: translateY(-2px);
 }
 
