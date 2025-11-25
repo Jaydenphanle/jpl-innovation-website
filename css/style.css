@@ -14,12 +14,17 @@ body {
     background: #0f1115;
     color: #e4e6eb;
 }
+
+#mainHeader {
+  transition: top 0.4s ease;
+}
+
 .navbar {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .navSection {
-    background: linear-gradient(90deg, #232526 0%, #2f3132 100%);
+    background: linear-gradient(90deg, #232526 0%,#0f111592 50%, #0f1115 100%);
 }
 
 .navSection .nav-link {
