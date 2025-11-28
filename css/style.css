@@ -24,27 +24,67 @@ body {
 }
 
 .navSection {
-    background: linear-gradient(90deg, #232526 0%,#0f111592 50%, #0f1115 100%);
+    background: transparent;
+    backdrop-filter: blur(6px);
 }
 
-.navSection .nav-link {
-    color: white;
+/* Keep collapsed mobile menu readable */
+@media (max-width: 991.98px) {
+  .navSection .navbar-collapse {
+    background: linear-gradient(180deg, rgba(26,29,35,0.95) 0%, rgba(15,17,21,0.98) 100%);
+  }
 }
 
-.navSection #navbarNav {
-    margin-right: 100px;
+/* Navbar link colors: muted by default, white when active, cyan on hover */
+.navSection .navbar-nav > .nav-item > .nav-link,
+.navSection .navbar-brand,
+.navSection .dropdown-toggle,
+.navSection .dropdown-item {
+  color: var(--primary) !important;
 }
 
-.navSection .navbar-brand {
-    margin-left: 50px;
+/* Members (dropdown) specific hover/active styling */
+.navSection .nav-item.dropdown > .nav-link:hover,
+.navSection .nav-item.dropdown.show > .nav-link 
+  
+
+/* Apply the same lighter-cyan on hover/active to all top-level nav links */
+.navSection .navbar-nav > .nav-item > .nav-link:hover,
+.navSection .navbar-nav > .nav-item > .nav-link:focus,
+.navSection .navbar-nav > .nav-item.show > .nav-link {
+  
+  transition: color 0.12s ease;
 }
+
+/* Also ensure dropdown items use slightly lighter cyan on hover for contrast */
+.navSection .dropdown-item:hover,
+.navSection .dropdown-submenu .dropdown-item:hover {
+  color: #04242a !important; /* keep text readable when background is cyan */
+}
+
+.navSection .nav-link.active,
+.navSection .nav-link:focus,
+.navSection .nav-link:hover {
+  color: var(--primary);
+}
+
+/* Make dropdown toggle text cyan as well */
+.navSection .dropdown-toggle,
+.navSection .dropdown-toggle.nav-link {
+  color: var(--primary);
+}
+
+/* Ensure dropdown items use cyan text on default (but keep background dark) */
+.navSection .dropdown-item {
+  color: var(--primary);
+}
+
 
 .navSection .nav-link {
   position: relative;
   display: inline-block;
-  color: var(--primary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .navSection .nav-link::after {
@@ -61,6 +101,7 @@ body {
 
 .navSection .nav-link:hover::after {
   width: 100%;
+  background-color: var(--primary);
 }
 
 .navSection .nav-link.active::after {
@@ -74,6 +115,36 @@ body {
   padding: 0;
   margin-top: 10px;
   border-radius: 8px;
+}
+
+/* Ensure the navbar toggler is visible on dark backgrounds 00000000000000000000000000000000000000000000000*/
+.navbar-dark .navbar-toggler {
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Make collapsed menu full-width on small screens for better touch targets */
+@media (max-width: 991.98px) {
+  .navSection .navbar-collapse {
+    background: linear-gradient(180deg, #232526 0%, #0f1115 100%);
+    padding: 1rem;
+    position: absolute;
+    top: 56px; /* height of header */
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+
+  .navSection .navbar-nav {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navSection .nav-link {
+    color: var(--white);
+    font-size: 1.05rem;
+  }
 }
 
 .navSection .dropdown-item {
@@ -108,6 +179,50 @@ body {
 
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
+}
+
+/* Open primary dropdown on hover for non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .navSection .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .navSection .nav-item.dropdown .dropdown-menu {
+    transition: opacity 0.12s ease, transform 0.12s ease;
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+/* Keep dropdown open while hovering the dropdown menu itself */
+@media (hover: hover) and (pointer: fine) {
+  .navSection .nav-item.dropdown:hover > .dropdown-menu,
+  .navSection .nav-item.dropdown .dropdown-menu:hover,
+  .navSection .nav-item.dropdown.show > .dropdown-menu {
+    display: block;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+/* Also keep nested submenu open while hovering submenu area */
+@media (hover: hover) and (pointer: fine) {
+  .navSection .dropdown-submenu .dropdown-menu {
+    transition: opacity 0.12s ease, transform 0.12s ease;
+    opacity: 0;
+    transform: translateY(-4px);
+    display: none;
+  }
+
+  .navSection .dropdown-submenu:hover > .dropdown-menu,
+  .navSection .dropdown-submenu .dropdown-menu:hover,
+  .navSection .nav-item.dropdown:hover .dropdown-submenu:hover > .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    z-index: 2100;
+  }
 }
 
 /* 🔹 Submenu and sub-submenu items */
